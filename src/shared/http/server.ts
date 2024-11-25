@@ -1,8 +1,10 @@
 import 'reflect-metadata'
+import '@shared/typeorm'
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import routes from './routes'
 import AppError from '@shared/errors/AppError'
+
 const erroHandler = (error: Error, req: Request, res: Response, next: NextFunction) => {
   if (error instanceof AppError) {
     return res
